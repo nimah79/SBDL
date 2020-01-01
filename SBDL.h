@@ -1,6 +1,6 @@
 /**
-* SBDL: Sadegh & Borjian Directmedia Layer!
-*/
+ * SBDL: Sadegh & Borjian DirectMedia Layer!
+ */
 
 #include <string>
 
@@ -11,7 +11,7 @@
 #include "SDL_ttf.h"
 #include "SDL_mixer.h"
 
-#elif defined(__linux__)  // linux
+#elif defined(__linux__) // linux
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
@@ -282,7 +282,6 @@ namespace SBDL {
 
 	/**
 	* update state of keyboard buttons (release or push) and mouse
-	* if ESCAPE pressed, application will stop
 	* call this function in a loop after initialize engine for get updated state all times
 	*/
 	void updateEvents() {
@@ -299,11 +298,6 @@ namespace SBDL {
 			Core::keystate = SDL_GetKeyboardState(&Core::keystate_size);
 		}
 		SDL_PumpEvents();
-
-		// close app if ESCAPE pressed
-		if (keyPressed(SDL_SCANCODE_ESCAPE)) {
-			Core::running = false;
-		}
 
 		// reset event handler state for check it again
 		Core::event = {};
