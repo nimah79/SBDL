@@ -11,12 +11,17 @@
 #include "SDL_ttf.h"
 #include "SDL_mixer.h"
 
-#elif defined(__linux__) // linux
-
+#elif defined(__linux__) // Linux
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include "SDL2/SDL_ttf.h"
 #include "SDL2/SDL_mixer.h"
+
+#else // MacOS
+#include <SDL.h>
+#include <SDL_ttf.h>
+#include <SDL_image.h>
+#include <SDL_mixer.h>
 
 #endif
 #undef main
